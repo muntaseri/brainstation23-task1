@@ -11,10 +11,6 @@ step2:
 Create the HTML file:
 Place your static HTML file inside the resources/views directory. For example, create a file named app2.html:
 
-html
-Copy code
-
-
 
 <!-- resources/views/static.html -->
 
