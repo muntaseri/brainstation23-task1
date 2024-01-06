@@ -26,21 +26,20 @@ pipeline {
 
     
 
-    stage('Build and push Docker image APP1') {
+ 
+    
+    
+    stage('Build and push Docker image APP2') {
 
       steps {
 
-        sh 'docker build -t docker-username/bs-app1:latest ../app1/.'
+        sh 'docker build -t docker-username/bs-app2:latest ../app2/.'
 
-        sh 'docker push docker-username/bs-app1:latest'
+        sh 'docker push docker-username/bs-app2:latest'
 
       }
 
     }
-
-    
-    
-
 
 
     stage('Deploy to Kubernetes') {
@@ -49,7 +48,7 @@ pipeline {
 
         kubernetesDeploy(
 
-          configs: 'app1/deploy/deploy.yaml',
+          configs: 'app2/deploy/deploy.yaml',
 
           kubeconfigId: 'minikube-kubeconfig'
 
